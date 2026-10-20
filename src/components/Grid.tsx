@@ -27,7 +27,7 @@ export const Grid: React.FC<GridProps> = ({ cards, cols, isLocked, onCardClick }
     <div className="w-full flex justify-center py-4 px-2">
       <div
         className={`grid gap-3 sm:gap-4 w-full ${getGridColsClass()} mx-auto transition-all duration-300`}
-        role="region"
+        role="group"
         aria-label="Memory Card Matching Grid"
       >
         {cards.map((card, index) => (

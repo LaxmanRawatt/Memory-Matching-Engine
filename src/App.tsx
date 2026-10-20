@@ -35,7 +35,8 @@ export default function App() {
   const [isDemoOpen, setIsDemoOpen] = useState<boolean>(false);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100 flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+      <div aria-hidden="true" className="ambient-glow pointer-events-none absolute -top-48 left-1/2 -z-0 h-96 w-[min(90vw,56rem)] -translate-x-1/2 rounded-full bg-indigo-600/15 blur-3xl" />
       {/* Top Application Header */}
       <Header
         onOpenInstructions={() => setIsInstructionsOpen(true)}

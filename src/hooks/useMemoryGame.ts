@@ -191,7 +191,10 @@ export function useMemoryGame(options: UseMemoryGameOptions = {}) {
             }
 
             // Calculate active elapsed time
-            const finalTime = elapsedTimeSec;
+            const finalTime = startTimeRef.current === null
+              ? elapsedTimeSec
+              : parseFloat((pausedAccumulatedRef.current + (performance.now() - startTimeRef.current) / 1000).toFixed(1));
+            setElapsedTimeSec(finalTime);
 
             // Evaluate explainable adaptive difficulty
             const adaptation = evaluateAdaptation(difficulty, newMoves, finalTime);
